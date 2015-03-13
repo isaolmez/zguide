@@ -121,23 +121,24 @@ public class RouterTest {
 //		threadPool.submit(new ClientThread(latch, 5550));
 		
 		// One client multi servers
-//		ExecutorService threadPool = Executors.newFixedThreadPool(5, new MyThreadFactory());
-//		CountDownLatch latch = new CountDownLatch(4);
-//		threadPool.submit(new RouterThread(latch, 5550, 5555, 5556, 5557));
-//		threadPool.submit(new ServerThread(latch, 5555));
-//		threadPool.submit(new ServerThread(latch, 5556));
-//		threadPool.submit(new ServerThread(latch, 5557));
-//		threadPool.submit(new ClientThread(latch, 5550));
-		
-		// Multi clients multi servers
-		ExecutorService threadPool = Executors.newFixedThreadPool(10, new MyThreadFactory());
+		// Client request are mapped to servers in a round robin fashin
+		ExecutorService threadPool = Executors.newFixedThreadPool(5, new MyThreadFactory());
 		CountDownLatch latch = new CountDownLatch(4);
 		threadPool.submit(new RouterThread(latch, 5550, 5555, 5556, 5557));
 		threadPool.submit(new ServerThread(latch, 5555));
 		threadPool.submit(new ServerThread(latch, 5556));
 		threadPool.submit(new ServerThread(latch, 5557));
 		threadPool.submit(new ClientThread(latch, 5550));
-		threadPool.submit(new ClientThread(latch, 5550));
-		threadPool.submit(new ClientThread(latch, 5550));
+		
+		// Multi clients multi servers
+//		ExecutorService threadPool = Executors.newFixedThreadPool(10, new MyThreadFactory());
+//		CountDownLatch latch = new CountDownLatch(4);
+//		threadPool.submit(new RouterThread(latch, 5550, 5555, 5556, 5557));
+//		threadPool.submit(new ServerThread(latch, 5555));
+//		threadPool.submit(new ServerThread(latch, 5556));
+//		threadPool.submit(new ServerThread(latch, 5557));
+//		threadPool.submit(new ClientThread(latch, 5550));
+//		threadPool.submit(new ClientThread(latch, 5550));
+//		threadPool.submit(new ClientThread(latch, 5550));
 	}
 }

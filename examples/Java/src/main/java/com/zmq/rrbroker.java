@@ -1,4 +1,5 @@
-package com.zmq;import org.zeromq.ZMQ;
+package com.zmq;
+import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Context;
 import org.zeromq.ZMQ.Poller;
 import org.zeromq.ZMQ.Socket;

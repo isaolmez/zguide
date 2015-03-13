@@ -1,13 +1,15 @@
-package com.zmq;import org.zeromq.ZMQ;
+package com.zmq.combination;import java.util.Random;
+
+import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Context;
 import org.zeromq.ZMQ.Socket;
 
-import java.util.Random;
+import com.zmq.ZHelper;
 
 /**
- * ROUTER-TO-DEALER example
+ * ROUTER-TO-REQ example
  */
-public class rtdealer
+public class RouterDealerCombination
 {
     private static Random rand = new Random();
     private static final int NBR_WORKERS = 10;
