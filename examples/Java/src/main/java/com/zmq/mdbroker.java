@@ -1,4 +1,6 @@
-package com.zmq;/**
+package com.zmq;
+
+/**
 * (c) 2011 Arkadiusz Orzechowski
 *
 * This file is part of ZGuide

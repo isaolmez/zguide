@@ -121,7 +121,7 @@ public class RouterTest {
 //		threadPool.submit(new ClientThread(latch, 5550));
 		
 		// One client multi servers
-		// Client request are mapped to servers in a round robin fashin
+		// Client request are mapped to servers in a round robin fashion
 		ExecutorService threadPool = Executors.newFixedThreadPool(5, new MyThreadFactory());
 		CountDownLatch latch = new CountDownLatch(4);
 		threadPool.submit(new RouterThread(latch, 5550, 5555, 5556, 5557));
